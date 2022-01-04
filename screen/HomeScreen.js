@@ -45,6 +45,7 @@ const HomeScreen = () => {
                         key: GOOGLE_MAPS_APIKEY,
                         language: 'en'
                     }}
+                    minLength = {2}
                     nearbyPlacesAPI="GooglePlacesSearch"
                     debounce={400}
                 />
