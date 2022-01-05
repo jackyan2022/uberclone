@@ -11,6 +11,7 @@ npm-debug.*
 web-build/
 .vscode/
 .env
+tryNewEmail
 
 # macOS
 .DS_Store
