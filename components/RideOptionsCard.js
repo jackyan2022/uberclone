@@ -42,7 +42,7 @@ const RideOptionsCard = () => {
                     style={tw`absolute top-3 left-5 z-50 p-3 rounded-full`}>
                     <Icon name="chevron-left" type="fontawesome"/>
                 </TouchableOpacity>
-                <Text style={tw`text-center py-5 text-xl`}>Select a Ride - {travelTimeInformation?.distance.text}</Text>
+                <Text style={tw`text-center py-5 text-xl`}>Select a Ride - {travelTimeInformation?.distance?.text}</Text>
             </View>
             <FlatList
                 data = {data}
@@ -74,7 +74,7 @@ const RideOptionsCard = () => {
                     </TouchableOpacity>
                 )}
             />
-            <View>
+            <View style={tw`mt-auto border-t border-grey-200`}>
                 <TouchableOpacity disabled={!selected} style={tw`bg-black py-3 m-3 ${!selected && "bg-gray-300"}`}
                 >
                     <Text style={tw`text-center text-white text-xl`}>Choose {selected?.title} </Text>
