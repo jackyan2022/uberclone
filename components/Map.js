@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Dimensions} from 'react-native'
 import MapView, {Marker} from 'react-native-maps'
 import tw from 'twrnc'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,9 +7,9 @@ import { selectDestination, selectOrigin, setTravelTimeInformation } from '../sl
 import {GOOGLE_MAPS_APIKEY} from '@env'
 import MapViewDirections from "react-native-maps-directions"
 import { useRef , useEffect} from 'react'
-import PolylineDirection from '@react-native-maps/polyline-direction';
 
 const Map = () => {
+    const { width, height } = Dimensions.get('window');
     const origin = useSelector(selectOrigin);
     const destination = useSelector(selectDestination);
     const mapRef = useRef(null);
@@ -47,13 +47,23 @@ const Map = () => {
         }}
       >
         {origin && destination && (
-          <PolylineDirection
+          <MapViewDirections
+            //waypoints={ (this.state.coordinates.length > 2) ? this.state.coordinates.slice(1, -1): undefined}
             origin={origin.description}
             destination={destination.description}
-            apiKey={GOOGLE_MAPS_APIKEY}
+            apikey={GOOGLE_MAPS_APIKEY}
             strokeWidth={3}
             strokeColor="black"
-            mode="driving"
+            onReady={result => {
+              mapRef.current.fitToCoordinates(result.coordinates, {
+                edgePadding: {
+                  right: (width / 20),
+                  bottom: (height / 20),
+                  left: (width / 20),
+                  top: (height / 20),
+                }
+              });
+            }}
           />
         )}
         {origin?.location && (
