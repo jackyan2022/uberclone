@@ -54,16 +54,6 @@ const Map = () => {
             apikey={GOOGLE_MAPS_APIKEY}
             strokeWidth={3}
             strokeColor="black"
-            onReady={result => {
-              mapRef.current.fitToCoordinates(result.coordinates, {
-                edgePadding: {
-                  right: (width / 20),
-                  bottom: (height / 20),
-                  left: (width / 20),
-                  top: (height / 20),
-                }
-              });
-            }}
           />
         )}
         {origin?.location && (
