@@ -61,20 +61,20 @@ const RideOptionsCard = () => {
                         />
                         <View style={tw`-ml-6`}>
                             <Text style={tw`text-xl font-semibold`}>{title}</Text>
-                            <Text>{travelTimeInformation?.duration.text} Travel Time</Text>
+                            <Text>{travelTimeInformation?.duration?.text} Travel Time</Text>
                         </View>
                         <Text style={tw`text-xl`}>
                             {new Intl.NumberFormat('en-gb', {
                                 style: 'currency',
                                 currency: 'USD'
                             }).format (
-                                (travelTimeInformation?.duration.value * SURGE_CHARGE_RATE * multiplier) / 100
+                                (travelTimeInformation?.duration?.value * SURGE_CHARGE_RATE * multiplier) / 100
                             )}
                         </Text>
                     </TouchableOpacity>
                 )}
             />
-            <View style={tw`mt-auto border-t border-grey-200`}>
+            <View style={tw`mt-auto border-t border-gray-200`}>
                 <TouchableOpacity disabled={!selected} style={tw`bg-black py-3 m-3 ${!selected && "bg-gray-300"}`}
                 >
                     <Text style={tw`text-center text-white text-xl`}>Choose {selected?.title} </Text>

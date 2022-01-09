@@ -7,6 +7,7 @@ import { selectDestination, selectOrigin, setTravelTimeInformation } from '../sl
 import {GOOGLE_MAPS_APIKEY} from '@env'
 import MapViewDirections from "react-native-maps-directions"
 import { useRef , useEffect} from 'react'
+import PolylineDirection from '@react-native-maps/polyline-direction';
 
 const Map = () => {
     const origin = useSelector(selectOrigin);
@@ -46,12 +47,13 @@ const Map = () => {
         }}
       >
         {origin && destination && (
-          <MapViewDirections
+          <PolylineDirection
             origin={origin.description}
             destination={destination.description}
-            apikey={GOOGLE_MAPS_APIKEY}
+            apiKey={GOOGLE_MAPS_APIKEY}
             strokeWidth={3}
             strokeColor="black"
+            mode="driving"
           />
         )}
         {origin?.location && (
