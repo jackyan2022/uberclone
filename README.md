@@ -30,8 +30,8 @@
 <br />
 <div align="center">
   <a href="https://github.com/hebe889900/uberclone">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_logo_2018.svg/2560px-Uber_logo_2018.svg.png" alt="Logo" width=10% 
-     height=10% > 
+    <img src="/assets/logo.png" alt="Logo" width=20% 
+     height=20% > 
   </a>
 
   <h3 align="center">Best-README-Template</h3>
