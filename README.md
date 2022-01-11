@@ -94,8 +94,6 @@ It is made using react native with expo and Google Map API.
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 * [React Native.js](https://reactnative.dev/)
 * [TailWind css](https://tailwindcss.com/)
 * [Redux.js](https://redux.js.org/)
